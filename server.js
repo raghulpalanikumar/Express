@@ -1,14 +1,17 @@
 const express = require('express');
 const app = express();
 const dotenv = require('dotenv')
-const connectDB = require('./config/db')
-const router = require('./router/egRouter')  
 dotenv.config()
-
+const connectDB = require('./config/db')
+const router = require('./router/egRouter');  
+const todoRouter = require('./router/todoRouters');//8
 const PORT = process.env.PORT || 3000
-connectDB();
+
+connectDB(); 
 app.use(express.json())
 app.use(router)
+app.use('/todo',todoRouter)//8
+
 app.listen(PORT,()=>{
     console.log(`server running on port http://localhost:${PORT}`)
 })
