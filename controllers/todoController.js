@@ -3,7 +3,7 @@ const todo = require('../models/todoModel.js');
 // Get all tasks
 exports.getRoute = async (req, res) => {
     const todoData = await todo.find();
-    res.status(200).json({ data: todoData });
+    res.status(200).json(todoData);
 };
 2
 // Get task by ID
@@ -12,7 +12,7 @@ exports.getRouteById = async (req, res) => {2
     if (!todoData) {
         return res.status(404).json({ message: "Task not found" });
     }
-    res.status(200).json({ data: todoData });
+    res.status(200).json({todoData });
 };
 
 // Create new task

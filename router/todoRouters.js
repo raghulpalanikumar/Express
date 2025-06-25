@@ -15,10 +15,10 @@ todoRouter.get('/', getRoute);
 todoRouter.get('/:id', getRouteById);
 
 // Route to create a new todo
-todoRouter.post('/', postRoute);
+todoRouter.post('/post', postRoute);
 
 // Route to update a todo by ID
-todoRouter.put('/:id', putRoute);
+todoRouter.put('/update:id', putRoute);
 
 // Route to delete a todo by ID
 todoRouter.delete('/:id', deleteRoute);
